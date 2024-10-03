@@ -4,7 +4,7 @@ import { faker } from '@faker-js/faker';
 describe('Funcionalidade cadastro', () => {
    
     beforeEach(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+        cy.visit('minha-conta')
     });
    
     it('Deve completar o cadastro com sucesso', () => {
@@ -25,6 +25,7 @@ describe('Funcionalidade cadastro', () => {
             var email = faker.internet.email()
             var nome = faker.person.firstName()
             var sobrenome = faker.person.lastName()
+            
             cy.get('#reg_email').type(email) 
             cy.get('#reg_password').type('teste123@')
             cy.get(':nth-child(4) > .button').click()
